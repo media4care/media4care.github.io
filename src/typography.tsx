@@ -5,7 +5,7 @@ type FontSize = "xxx-large" | "xx-large" | "x-large" | "large" | "medium" | "sma
 
 const fontSizes = {
   "xxx-large": 60,
-  "xx-large": 50,
+  "xx-large": 45,
   "x-large": 20,
   large: 18,
   medium: 16,
@@ -30,6 +30,7 @@ export const Headline = styled(OverflowFixedSpan)<{ size?: FontSize; color?: Col
   font-weight: 700;
   font-size: ${props => fontSizes[props.size || "x-large"]}px;
   color: ${props => props.color || Color.secondary70};
+  text-align: center;
 `;
 
 export const Body = styled.p<{ size?: FontSize; color?: Color; compact?: boolean }>`
