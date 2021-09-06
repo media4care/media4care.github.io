@@ -6,7 +6,7 @@ export enum Color {
     secondary60 = "#47505E",
     secondary50 = "#767B84",
     secondary40 = "#A8ADB8",
-    secondary30 = "#888",
+    secondary30 = "#777",
     secondary20 = "#ccc",
     secondary10 = "#F6F7F8",
     statusRed = "#FF6161",

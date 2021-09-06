@@ -3,8 +3,8 @@ import { Headline, EmphasisSpan } from "./typography";
 import { Color } from "./colors";
 import "./fonts.css";
 
-const background1 = "#dddddd";
-const background2 = "#bbbbbb";
+const background1 = "#ccc";
+const background2 = "#aaa";
 
 const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({src, name, title}) => (
   <Member>
@@ -40,7 +40,7 @@ function App() {
     <Layout>
       <Header>
         <Headline size="xxx-large" color={Color.secondaryFFF}>THE TEAM</Headline>
-        <Headline size="xx-large" color={Color.secondary20}>meet the devs behind the curtain</Headline>
+        <Headline size="xx-large" color={Color.secondary20}>meet the devs!</Headline>
       </Header>
       <Team background={background1}>
         <MemberProfile src="peter.png" name="Peter" title="Head of Devs"/>
@@ -145,7 +145,7 @@ const StackLogos = styled.div`
 const ProductImages = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 16px 0;
+  padding: 32px 0;
   justify-content: space-around;
   flex-wrap: wrap;
 `;
