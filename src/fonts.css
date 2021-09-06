@@ -25,4 +25,8 @@
     font-weight: 500;
     src: local("DINPro Bold"), url("./assets/font/OpenSans-Bold.ttf") format("truetype");
   }
-  
+
+  @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@800&family=Press+Start+2P&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@800&family=Kanit:wght@800&family=Press+Start+2P&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@800&family=Changa+One&family=Kanit:wght@800&family=Press+Start+2P&display=swap');
