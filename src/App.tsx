@@ -1,8 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
 import styled from "styled-components";
-import { Headline } from "./typography";
+import { Headline, EmphasisSpan } from "./typography";
 import { Color } from "./colors";
+import "./fonts.css";
+
+const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({src, name, title}) => (
+  <Member>
+    <AvatarContainer><img src={src} /></AvatarContainer>
+    <EmphasisSpan color={Color.secondary70}>{name}</EmphasisSpan>
+    <EmphasisSpan color={Color.secondary60} size="large">{title}</EmphasisSpan>
+
+  </Member>
+);
 
 function App() {
   return (
@@ -12,11 +20,11 @@ function App() {
         <Headline size="xx-large" color={Color.secondary60}>meet the devs behind the curtain</Headline>
       </Header>
       <Team>
-        <AvatarContainer><img src="peter.png" /></AvatarContainer>
-        <AvatarContainer><img src="brian.png" /></AvatarContainer>
-        <AvatarContainer><img src="stewie.jpg" /></AvatarContainer>
-        <AvatarContainer><img src="cleveland.jpg" /></AvatarContainer>
-        <AvatarContainer><img src="quagmire.jpg" /></AvatarContainer>
+        <MemberProfile src="peter.png" name="Peter" title="Head of Devs"/>
+        <MemberProfile src="brian.png" name="Brian" title="Sr. Software Developer"/>
+        <MemberProfile src="stewie.jpg" name="Stewie" title="Sr. Software Developer"/>
+        <MemberProfile src="cleveland.jpg" name="Cleveland" title="Jr. Software Developer"/>
+        <MemberProfile src="quagmire.jpg" name="Quagmire" title="QA"/>
       </Team>
       <Stack />
     </Layout>
@@ -24,6 +32,7 @@ function App() {
 }
 
 const Layout = styled.div`
+  font-family: "DINPro Bold", "Roboto Condensed", sans-serif;
   padding: 32px;
 `;
 
@@ -44,7 +53,10 @@ span {
 }
 `;
 
-
+const Member = styled.div`
+display:flex;
+flex-direction: column;
+`;
 
 const Team = styled(Section)`
 background: lightgrey;
@@ -67,6 +79,7 @@ const AvatarContainer = styled.div`
   z-index: 1;
   box-shadow: -4px 4px 8px 0px rgba(0, 0, 0, 0.32);
   margin: 16px;
+
   img {
     width: 100%;
     height: auto;
