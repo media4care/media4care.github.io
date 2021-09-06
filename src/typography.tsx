@@ -6,7 +6,7 @@ type FontSize = "xxx-large" | "xx-large" | "x-large" | "large" | "medium" | "sma
 const fontSizes = {
   "xxx-large": 55,
   "xx-large": 45,
-  "x-large": 20,
+  "x-large": 30,
   large: 18,
   medium: 16,
   small: 14,

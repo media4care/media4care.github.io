@@ -7,11 +7,11 @@ const background1 = "#ccc";
 const background2 = "#aaa";
 
 const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({src, name, title}) => (
-  <ColumnFlex>
+  <Member>
     <AvatarContainer><img src={src} /></AvatarContainer>
     <EmphasisSpan color={Color.secondary70}>{name}</EmphasisSpan>
     <EmphasisSpan color={Color.secondary30} size="large">{title}</EmphasisSpan>
-  </ColumnFlex>
+  </Member>
 );
 
 const Value: React.FC<{src: string, title: string, descr: string}> = ({src, title, descr}) => (
@@ -48,7 +48,7 @@ function App() {
     <Layout>
       <Header>
         <Headline size="xxx-large" color={Color.secondaryFFF}>M4C/DEV</Headline>
-        <Headline size="xx-large" color={Color.secondary20}>nice to meet you!</Headline>
+        <Headline size="x-large" color={Color.secondary20}>nice to meet you!</Headline>
       </Header>
       <Section title="THE DEVS" background={background1}>
         <MemberProfile src="peter.png" name="Peter" title="Head of Devs"/>
@@ -121,14 +121,26 @@ const SectionLayout = styled(ColumnFlex)<{background: string}>`
 
 const SectionTitle = styled(Headline)`
   font-family: 'Kanit', sans-serif;
-  padding-bottom: 64px;
+  padding-bottom: 48px;
+`;
+
+const Member = styled(ColumnFlex)`
+  margin: 16px;
 `;
 
 const ProductImage = styled.div`
   overflow: hidden;
   width: auto;
-  height: 400px;
   display: flex;
+  margin: 16px;
+
+  @media (orientation: landscape) {
+    height: 400px;
+  }
+  
+  @media (orientation: portrait) {
+    max-height: 400px;
+  }
 
   img {
     width: 100%;
@@ -174,7 +186,7 @@ const StackLogo = styled.div`
   width: 80px;
   height: 80px;
   display: flex;
-  margin: 0 8px;
+  margin: 16px;
   img {
     width: 100%;
     height: auto;
