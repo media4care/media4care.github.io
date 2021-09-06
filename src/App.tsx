@@ -54,6 +54,8 @@ function App() {
           <StackLogo><img src="ts.svg" /></StackLogo>
           <StackLogo><img src="graphql.svg" /></StackLogo>
           <StackLogo><img src="postgraphile.svg" /></StackLogo>
+          <StackLogo><img src="terraform.svg" /></StackLogo>
+          <StackLogo><img src="aws.svg" /></StackLogo>
         </StackLogos>
       </Stack>
       <Stack >
