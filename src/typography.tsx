@@ -5,7 +5,7 @@ type FontSize = "xxx-large" | "xx-large" | "x-large" | "large" | "medium" | "sma
 
 const fontSizes = {
   "xxx-large": 60,
-  "xx-large": 24,
+  "xx-large": 50,
   "x-large": 20,
   large: 18,
   medium: 16,
@@ -14,9 +14,9 @@ const fontSizes = {
 };
 
 const OverflowFixedSpan = styled.span`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
 `;
 
 export const Emphasis = styled.p<{ size?: FontSize; color?: Color; compact?: boolean }>`

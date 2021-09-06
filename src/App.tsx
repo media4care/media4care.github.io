@@ -11,6 +11,27 @@ const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({sr
   </Member>
 );
 
+
+const Value: React.FC<{src: string, title: string, descr: string}> = ({src, title, descr}) => (
+  <ValueLayout>
+    <StackLogo><img src={src} /></StackLogo>
+    <ValueText>
+      <EmphasisSpan color={Color.secondary70}>{title}</EmphasisSpan>
+      <EmphasisSpan color={Color.secondary60} size="large">{descr}</EmphasisSpan>
+    </ValueText>
+  </ValueLayout>
+);
+
+const Counter: React.FC<{src: string, title: string, descr: string}> = ({src, title, descr}) => (
+  <ValueLayout>
+    <StackLogo><img src={src} /></StackLogo>
+    <ValueText>
+      <EmphasisSpan size="xxx-large" color={Color.secondary70}>{title}</EmphasisSpan>
+      <EmphasisSpan color={Color.secondary60} size="large">{descr}</EmphasisSpan>
+    </ValueText>
+  </ValueLayout>
+);
+
 function App() {
   return (
     <Layout>
@@ -26,16 +47,38 @@ function App() {
         <MemberProfile src="quagmire.jpg" name="Quagmire" title="QA"/>
       </Team>
       <Stack >
-        <Headline size="xxx-large" color={Color.secondaryFFF}>THE STACK</Headline>
+        <Headline size="xx-large" color={Color.secondaryFFF}>THE STACK</Headline>
         <StackLogos>
           <StackLogo><img src="ionic.svg" /></StackLogo>
           <StackLogo><img src="react-icon.svg" /></StackLogo>
           <StackLogo><img src="ts.svg" /></StackLogo>
           <StackLogo><img src="graphql.svg" /></StackLogo>
-
           <StackLogo><img src="postgraphile.svg" /></StackLogo>
-
         </StackLogos>
+      </Stack>
+      <Stack >
+        <Headline size="xx-large" color={Color.secondaryFFF}>OUR TEAM VALUES</Headline>
+        <ValueLogos>
+          <Value src="001-blocks.svg" title="High quality" descr="Cras tincidunt egestas ex, at imperdiet massa rhoncus et. Etiam commodo nibh in urna pulvinar maximus. Maecenas iaculis ante orci, non commodo dui sagittis eget." />
+          <Value src="002-team.svg" title="We are a team" descr="Cras tincidunt egestas ex, at imperdiet massa rhoncus et. Etiam commodo nibh in urna pulvinar maximus. Maecenas iaculis ante orci, non commodo dui sagittis eget." />
+          <Value src="004-talking.svg" title="Open communication" descr="Cras tincidunt egestas ex, at imperdiet massa rhoncus et. Etiam commodo nibh in urna pulvinar maximus. Maecenas iaculis ante orci, non commodo dui sagittis eget." />
+          <Value src="005-big-family.svg" title="Purpose" descr="Cras tincidunt egestas ex, at imperdiet massa rhoncus et. Etiam commodo nibh in urna pulvinar maximus. Maecenas iaculis ante orci, non commodo dui sagittis eget." />
+        </ValueLogos>
+      </Stack>
+      <Stack >
+        <Headline size="xx-large" color={Color.secondaryFFF}>THE PRODUCT</Headline>
+        <ProductImages>
+          <ProductImage><img src="b2c2.png" /></ProductImage>
+          <ProductImage><img src="b2c1.png"  /></ProductImage>
+        </ProductImages>
+      </Stack>
+      <Stack >
+        <Headline size="xx-large" color={Color.secondaryFFF}>SOME COUNTERS</Headline>
+        <Counters>
+          <Counter src="002-speak.svg" title="1234" descr="Messages sent" />
+          <Counter src="003-video-call.svg" title="1234" descr="Videocall minutes" />
+          <Counter src="001-pictures.svg" title="1234" descr="Pictures sent" />
+        </Counters>
       </Stack>
     </Layout>
   );
@@ -43,13 +86,11 @@ function App() {
 
 const Layout = styled.div`
   font-family: "DINPro Bold", "Roboto Condensed", sans-serif;
-  padding: 32px;
 `;
 
 const Section = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 200px;
   padding: 64px;
 `;
 
@@ -62,7 +103,6 @@ const Header = styled(Section)`
     align-self: center;
   }
   padding: 16px;
-
 `;
 
 const Member = styled.div`
@@ -82,12 +122,59 @@ const Stack = styled(Section)`
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-bottom: 0;
+
 `;
 
-const StackLogos = styled(Section)`
+const StackLogos = styled.div`
   display: flex;
   flex-direction: row;
+  padding: 32px 0;
+`;
 
+const ProductImages = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0;
+  height: 550px;
+`;
+
+const ProductImage = styled.div`
+  height: 100%;
+  overflow: hidden;
+  img {
+    object-fit: contain;
+    height: 100%;
+  }
+  margin-right: 32px;
+`;
+
+
+const ValueLayout = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ValueLogos = styled.div`
+  display: flex;
+  padding: 32px 0;
+`;
+
+const Counters = styled.div`
+  display: flex;
+  padding: 32px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`;
+
+const ValueText = styled.div`
+  display:flex;
+  flex-direction: column;
+  margin: 16px;
+  align-items: center;
 `;
 
 const AvatarContainer = styled.div`
