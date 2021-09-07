@@ -2,16 +2,28 @@ import styled from "styled-components";
 import { Headline, EmphasisSpan } from "./typography";
 import { Color } from "./colors";
 import "./fonts.css";
+import "./App.css";
 
 const background1 = "#ccc";
 const background2 = "#aaa";
 
 const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({src, name, title}) => (
-  <Member>
-    <AvatarContainer><img src={src} /></AvatarContainer>
-    <EmphasisSpan color={Color.secondary70}>{name}</EmphasisSpan>
+<Member>
+  <div className="circle-container">
+    <div className="circle">
+      <div className="front">
+        <img  src={src} alt="The Elevation Group Logo" />
+      </div>
+      <div className="back">
+        <EmphasisSpan color={Color.secondary30} size="medium">something funny</EmphasisSpan>
+        <EmphasisSpan color={Color.secondary30} size="medium">something not so funny</EmphasisSpan>
+      </div>
+    </div>
+  </div>
+   <EmphasisSpan color={Color.secondary70}>{name}</EmphasisSpan>
     <EmphasisSpan color={Color.secondary30} size="large">{title}</EmphasisSpan>
-  </Member>
+</Member>
+
 );
 
 const Value: React.FC<{src: string, title: string, descr: string}> = ({src, title, descr}) => (
@@ -125,7 +137,7 @@ const SectionTitle = styled(Headline)`
 `;
 
 const Member = styled(ColumnFlex)`
-  margin: 16px;
+  //margin: 16px;
 `;
 
 const ProductImage = styled.div`
@@ -153,7 +165,7 @@ const ValueLayout = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 `;
 
 const ValueText = styled.div`
