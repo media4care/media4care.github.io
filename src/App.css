@@ -1,8 +1,9 @@
 
 .circle-container {
 	position: relative;
-	perspective: 1000;	
-  margin: 0 8x 16px 8px;
+	perspective: 1000;
+  margin: 0 8px 16px 8px;
+
 }
 		
 .circle-container:hover .circle {

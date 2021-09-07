@@ -20,8 +20,8 @@ const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({sr
       </div>
     </div>
   </div>
-   <EmphasisSpan color={Color.secondary70}>{name}</EmphasisSpan>
-    <EmphasisSpan color={Color.secondary30} size="large">{title}</EmphasisSpan>
+   <EmphasisSpan color={Color.secondary70} size="large">{name}</EmphasisSpan>
+    <EmphasisSpan color={Color.secondary30} size="medium">{title}</EmphasisSpan>
 </Member>
 
 );
@@ -31,7 +31,7 @@ const Value: React.FC<{src: string, title: string, descr: string}> = ({src, titl
     <ValueLogo><img src={src} /></ValueLogo>
     <ValueText>
       <EmphasisSpan color={Color.secondary70}>{title}</EmphasisSpan>
-      <EmphasisSpan color={Color.secondary30} size="large">{descr}</EmphasisSpan>
+      <EmphasisSpan color={Color.secondary30} size="medium">{descr}</EmphasisSpan>
     </ValueText>
   </ValueLayout>
 );
@@ -137,7 +137,7 @@ const SectionTitle = styled(Headline)`
 `;
 
 const Member = styled(ColumnFlex)`
-  //margin: 16px;
+  margin: 16px;
 `;
 
 const ProductImage = styled.div`

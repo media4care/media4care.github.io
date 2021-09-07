@@ -7,8 +7,8 @@ const fontSizes = {
   "xxx-large": 55,
   "xx-large": 45,
   "x-large": 30,
-  large: 18,
-  medium: 16,
+  large: 24,
+  medium: 20,
   small: 14,
   "x-small": 12,
 };
