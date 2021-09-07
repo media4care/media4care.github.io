@@ -63,11 +63,11 @@ function App() {
         <Headline size="x-large" color={Color.secondary20}>nice to meet you!</Headline>
       </Header>
       <Section title="THE DEVS" background={background1}>
-        <MemberProfile src="peter.png" name="Peter" title="Head of Devs"/>
-        <MemberProfile src="brian.png" name="Brian" title="Sr. Software Developer"/>
-        <MemberProfile src="stewie.jpg" name="Stewie" title="Sr. Software Developer"/>
-        <MemberProfile src="chris.jpg" name="Chris" title="Jr. Software Developer"/>
-        <MemberProfile src="quagmire.png" name="Quagmire" title="QA"/>
+        <MemberProfile src="brian.png" name="Euclides" title="Sr. Software Developer"/>
+        <MemberProfile src="peter.png" name="Javier" title="Head of Software"/>
+        <MemberProfile src="chris.jpg" name="Ravi" title="Sr. Software Developer"/>
+        <MemberProfile src="stewie.jpg" name="Nils" title="Jr. Software Developer"/>
+        <MemberProfile src="quagmire.png" name="Aniket" title="QA"/>
       </Section>
       <Section title="THE STACK" background={background2}>     
         <StackLogo><img src="ionic.svg" /></StackLogo>
@@ -94,6 +94,14 @@ function App() {
         <Counter src="003-video-call.svg" title="1234" descr="Videocall minutes" />
         <Counter src="001-pictures.svg" title="1234" descr="Pictures sent" />
       </Section>
+      <SectionLayout background={background2}>
+        <SectionTitle size="xx-large" color={Color.secondaryFFF}>JOIN OUR TEAM</SectionTitle>
+        <ColumnFlex>
+          <Headline size="x-large" color={Color.secondary20}>would you like to work with us? please check our job openings!</Headline>
+        </ColumnFlex>
+        <Button onClick={() =>     window.open("https://www.media4care.net/karriere/")
+}><EmphasisSpan color={Color.secondaryFFF} size="x-large">JOBS</EmphasisSpan></Button>
+      </SectionLayout>
     </Layout>
   );
 }
@@ -184,7 +192,7 @@ const AvatarContainer = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  box-shadow: -4px 4px 8px 0px rgba(0, 0, 0, 0.32);
+
   margin: 0 16px 16px 16px;
 
   img {
@@ -207,6 +215,28 @@ const StackLogo = styled.div`
 
 const ValueLogo = styled(StackLogo)`
   margin-bottom: 16px;
+`;
+
+
+export const TextButton = styled.button`
+
+`;
+
+export const Button = styled.button`
+margin-top: 32px;
+outline: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    background: linear-gradient(
+90deg
+, rgb(20, 150, 191) 0%, rgb(1, 105, 194) 100%);
+    border-radius: 8px;
+    box-shadow: rgb(0 18 71 / 20%) 0px 2px 5px;
+    opacity: 1;
+    width: 300px;
+    border: 0;
+    align-self: center;
 `;
 
 export default App;
