@@ -7,21 +7,21 @@ import "./App.css";
 const background1 = "#ccc";
 const background2 = "#aaa";
 
-const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({src, name, title}) => (
+const MemberProfile: React.FC<{src: string, name: string, title: string}> = ({src, name, title, children}) => (
 <Member>
   <div className="circle-container">
     <div className="circle">
-      <div className="front">
+    <div className="front">
         <img  src={src} alt="The Elevation Group Logo" />
-      </div>
+      </div> 
       <div className="back">
-        <EmphasisSpan color={Color.secondary30} size="medium">something funny</EmphasisSpan>
-        <EmphasisSpan color={Color.secondary30} size="medium">something not so funny</EmphasisSpan>
+        {children}
       </div>
+    
     </div>
   </div>
    <EmphasisSpan color={Color.secondary70} size="large">{name}</EmphasisSpan>
-    <EmphasisSpan color={Color.secondary30} size="medium">{title}</EmphasisSpan>
+   <EmphasisSpan color={Color.secondary30} size="medium">{title}</EmphasisSpan>
 </Member>
 
 );
@@ -55,29 +55,71 @@ const Section: React.FC<{title: string, background: string}> = ({ title, backgro
   </SectionLayout>
 );
 
+const Stack: React.FC<{src: string, title: string}> = ({src, title}) => (
+  <ValueLayout>
+    <StackLogo><img src={src} /></StackLogo>
+    <ValueText>
+      <EmphasisSpan size="medium" color={Color.secondary30}>{title}</EmphasisSpan>
+    </ValueText>
+  </ValueLayout>
+);
+
 function App() {
   return (
     <Layout>
       <Header>
-        <Headline size="xxx-large" color={Color.secondaryFFF}>M4C/DEV</Headline>
-        <Headline size="x-large" color={Color.secondary20}>nice to meet you!</Headline>
+        <Headline className="logo-1" size="xxx-large" color={Color.secondaryFFF}>M4C/DEV</Headline>
+        <Headline size="x-large" color={Color.secondary10}>nice to meet you!</Headline>
       </Header>
       <Section title="THE DEVS" background={background1}>
-        <MemberProfile src="brian.png" name="Euclides" title="Sr. Software Developer"/>
-        <MemberProfile src="peter.png" name="Javier" title="Head of Software"/>
-        <MemberProfile src="chris.jpg" name="Ravi" title="Sr. Software Developer"/>
-        <MemberProfile src="stewie.jpg" name="Nils" title="Jr. Software Developer"/>
-        <MemberProfile src="quagmire.png" name="Aniket" title="QA"/>
+        <MemberProfile src="IMG_1112 2_1.jpg" name="Euclides" title="Sr. Software Developer">
+          <ul>
+            <li>Food: Paella</li>
+            <li>Band: Joao Gilberto</li>
+            <li>Country: Portugal</li>
+            <li>Book: Platform</li>
+          </ul>
+          </MemberProfile>
+        <MemberProfile src="IMG_1211_1.jpg" name="Javier" title="Head of Software">   <ul>
+            <li>Food: Dahl</li>
+            <li>Band: Have Heart</li>
+            <li>Country: Malaysia</li>
+            <li>Book: Platform</li>
+          </ul>
+        </MemberProfile>
+
+        <MemberProfile src="IMG_1116 2_1.jpg" name="Ravi" title="Sr. Software Developer">   <ul>
+        <li>Food: Burger</li>
+            <li>Band: Have Heart</li>
+            <li>Country: Malaysia</li>
+            <li>Book: Platform</li>
+          </ul>          </MemberProfile>
+
+        <MemberProfile src="IMG_1120 2_1.jpg" name="Nils" title="Jr. Software Developer">   <ul>
+        <li>Food: Pizza</li>
+            <li>Band: Have Heart</li>
+            <li>Country: Malaysia</li>
+            <li>Book: Platform</li>
+          </ul>          </MemberProfile>
+
+        {/* <MemberProfile src="quagmire.png" name="Aniket" title="QA">   <ul>
+        <li>Food: Dahl</li>
+            <li>Band: Have Heart</li>
+            <li>Country: Malaysia</li>
+            <li>Book: Platform</li>
+          </ul>          </MemberProfile> */}
+
       </Section>
       <Section title="THE STACK" background={background2}>     
-        <StackLogo><img src="ionic.svg" /></StackLogo>
-        <StackLogo><img src="react.svg" /></StackLogo>
-        <StackLogo><img src="ts.svg" /></StackLogo>
-        <StackLogo><img src="graphql.svg" /></StackLogo>
-        <StackLogo><img src="postgraphile.svg" /></StackLogo>
-        <StackLogo><img src="terraform.svg" /></StackLogo>
-        <StackLogo><img src="aws.svg" /></StackLogo>
-        <StackLogo><img src="circleci.svg" /></StackLogo>
+        <Stack  src="ionic.svg" title="Ionic" />
+        <Stack  src="ts.svg" title="Typescript" />
+        <Stack  src="graphql.svg" title="Graphql" />
+        <Stack  src="postgraphile.svg" title="Postgraphile" />
+        <Stack  src="terraform.svg" title="Terraform" />
+        <Stack  src="aws.svg" title="AWS" />
+        <Stack  src="circleci.svg" title="CircleCI" />
+
+       
       </Section>
       <Section title="OUR TEAM VALUES" background={background1}>
         <Value src="001-blocks.svg" title="High quality" descr="Aliquam lobortis vestibulum mi vel condimentum. Praesent eu mi lectus. Etiam sed nulla nec dui pellentesque auctor. Sed tempus, sem quis convallis ultricies, lectus erat posuere arcu, at vehicula libero dui fermentum nibh. Pellentesque scelerisque dui libero, a consectetur nulla vulputate in. Vestibulum laoreet rutrum vulputate. Etiam vel diam nec dolor ornare varius quis ac mi." />
@@ -97,9 +139,9 @@ function App() {
       <SectionLayout background={background2}>
         <SectionTitle size="xx-large" color={Color.secondaryFFF}>JOIN OUR TEAM</SectionTitle>
         <ColumnFlex>
-          <Headline size="x-large" color={Color.secondary20}>would you like to work with us? please check our job openings!</Headline>
+          <Headline size="x-large" color={Color.secondary10}>would you like to work with us? please check our job openings!</Headline>
         </ColumnFlex>
-        <Button onClick={() =>     window.open("https://www.media4care.net/karriere/")
+        <Button onClick={() => window.open("https://www.media4care.net/karriere/")
 }><EmphasisSpan color={Color.secondaryFFF} size="x-large">JOBS</EmphasisSpan></Button>
       </SectionLayout>
     </Layout>
@@ -142,6 +184,18 @@ const SectionLayout = styled(ColumnFlex)<{background: string}>`
 const SectionTitle = styled(Headline)`
   font-family: 'Kanit', sans-serif;
   padding-bottom: 48px;
+  ::before {
+    width: 0rem;
+
+  }
+  ::after {
+    content: '';
+    display: block;
+    height: .4rem;
+    width: 7rem;
+    background: ${Color.primary};
+    margin: 0 auto 0;
+  }
 `;
 
 const Member = styled(ColumnFlex)`
@@ -202,7 +256,6 @@ const AvatarContainer = styled.div`
 `;
 
 const StackLogo = styled.div`
-  overflow: hidden;
   width: 80px;
   height: 80px;
   display: flex;

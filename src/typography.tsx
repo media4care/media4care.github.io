@@ -9,7 +9,7 @@ const fontSizes = {
   "x-large": 30,
   large: 24,
   medium: 20,
-  small: 14,
+  small: 16,
   "x-small": 12,
 };
 
@@ -24,9 +24,16 @@ export const Headline = styled.span<{ size?: FontSize; color?: Color }>`
 `;
 
 export const EmphasisSpan = styled.span<{ size?: FontSize; color?: Color; compact?: boolean }>`
-  font-weight: ${props => (props.size === "small" || !props.size ? "normal" : 600)};
+  font-weight: 600;
   font-size: ${props => fontSizes[props.size || "x-large"]}px;
   color: ${props => props.color || Color.secondary70};
   ${props => (props.compact ? "margin: 0" : "")};
   text-align: center;
+`;
+
+export const BodySpan = styled.span<{ size?: FontSize; color?: Color; compact?: boolean }>`
+  font-weight: 400;
+  font-size: ${props => fontSizes[props.size || "x-large"]}px;
+  color: ${props => props.color || Color.secondary70};
+  ${props => (props.compact ? "margin: 0" : "")};
 `;
